@@ -22,6 +22,7 @@ struct Manager
     void refresh()
     {
         // Using iterators, <https://www.geeksforgeeks.org/iterators-c-stl/>
+        // Learn more about `std::remove_if` in <https://www.geeksforgeeks.org/stdremove-stdremove_if-c/>
         entities.erase(std::remove_if(std::begin(entities), std::end(entities),
                                       [](const std::unique_ptr<Entity> &mEntity) { return !mEntity->alive; }),
                        std::end(entities));
